@@ -7,11 +7,20 @@ description: Mushroom dataset
 
 
 ```{r}
-#Change working directory as needed*
+##Read locally, Change working directory as needed*
 setwd("C:/Users/liye/Documents/R Class/Week 3")
 getwd()
+
 mydata = read.csv("mushroom dataset.txt")  
+
+
+##Read online
+#library(data.table)
+mydata <- read.csv(url("https://archive.ics.uci.edu/ml/machine-learning-databases/mushroom/agaricus-lepiota.data"))
+
 head(mydata)
+
+##Assign colum names
 colnames(mydata) <- c("classes","cap-shape","cap-surface","cap-color","bruises",
                       "odor",	"gill-attachment","gill-spacing","gill-size",
                       "gill-color","stalk-shape","stalk-root",
@@ -20,11 +29,14 @@ colnames(mydata) <- c("classes","cap-shape","cap-surface","cap-color","bruises",
                       "veil-type","veil-color","ring-number","ring-type",
                       "spore-print-color","population","habitat")
 
+head(mydata)
+
 subset <- data.frame(head(mydata,20))
 subset$classes = gsub("e", "edible", subset$classes)
 subset$classes = gsub("p", "poisonous", subset$classes)
 
-subset[1]```
+subset[1]
+```
 
 
 
