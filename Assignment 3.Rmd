@@ -1,0 +1,30 @@
+---
+title: "Assignment 3"
+output: html_document
+description: Mushroom dataset
+---
+
+
+
+```{r}
+#Change working directory as needed*
+setwd("C:/Users/liye/Documents/R Class/Week 3")
+getwd()
+mydata = read.csv("mushroom dataset.txt")  
+head(mydata)
+colnames(mydata) <- c("classes","cap-shape","cap-surface","cap-color","bruises",
+                      "odor",	"gill-attachment","gill-spacing","gill-size",
+                      "gill-color","stalk-shape","stalk-root",
+                      "stalk-surface-above-ring","stalk-surface-below-ring",
+                      "stalk-color-above-ring","stalk-color-below-ring",
+                      "veil-type","veil-color","ring-number","ring-type",
+                      "spore-print-color","population","habitat")
+
+subset <- data.frame(head(mydata,20))
+subset$classes = gsub("e", "edible", subset$classes)
+subset$classes = gsub("p", "poisonous", subset$classes)
+
+subset[1]```
+
+
+
