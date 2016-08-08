@@ -28,7 +28,6 @@ You can also embed plots, for example:
 
 ```{r, echo=FALSE}
 require(ggplot2)
-data(shorten_data)
 
 #Of the 292 standard lengthed movies made in 2005, most of the rating are above average. Users rating tends be slightly positive  than extreme poor/good.
 hist(shorten_data$rating, main="Rating Histogram", xlab="rating")
